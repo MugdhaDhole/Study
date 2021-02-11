@@ -1,0 +1,309 @@
+Java : Java is a class-based, object-oriented programming language
+Features : 
+- simple, object-oriented.
+- robust and secure.
+- architecture-neutral and portable.
+- Platform Independent
+
+JVM : Java Virtual Machine
+-run Java programs and compile to Java bytecode
+-JVM calls the main method
+
+JRE : Java Runtime Environment
+-provides the class libraries and other resources that a specific Java program needs to run
+
+eg : Java Hello World Program
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+}
+
+----------------------------------------------------------------------------------------------------
+
+Package : 
+- Collection of classes.
+- group of classes and interfaces.
+- organize classes belonging to the same category or providing similar functionality.
+- Package naming starts with lowercase and not uppercase.
+
+Literal : Constant value given to a variable.
+eg : 
+int a=10;
+
+Keyword : Predefined words or reserved words.
+- It has a special meaning to the compiler.
+
+Variable : To store a value and values can be changed.
+eg : 
+int a=10;
+
+Identifier : Given class name, method name, variable name.
+
+DataTypes :
+-Data type specifies the size and type of values that can be stored in an identifier
+
+Data Types are of 3 types
+1)Primitive : 
+-Already defined in language.
+-which include Integer, Floating Point, Character and Boolean.
+
+2)Derived : Type is fixed but size is not fixed.
+eg : array
+
+3) User Defined : Type not fixed and size is also not fixed.
+eg : Classes, Interfaces
+
+----------------------------------------------------------------------------------------------------
+
+OOPS : Object Oriented Programming System
+- It is a programming paradigm to design a software.
+-  object-oriented programming is about having classes and objects that contain both data and methods.
+
+Features : 
+- Inheritance
+- Ploymorphism
+- Encapsulation
+- Data Abstraction
+
+Class : 
+- Class is a blue print
+- It is a logical entity
+- contains data members, member functions and constructors.
+- class has access specifiers like default, public, protected, private.
+
+Syntax : 
+
+class Class_Name
+{
+ 	//data members, member functions and constructors
+}
+
+Object : Object describes the state and behaviour of the class.
+
+Syntax : 
+Class_name Object_Name;
+
+Interface : 
+- It has static constants and abstract methods
+- Only abstract methods in the interface and no method body
+
+- Variable : Public, static and final by default
+- Method : Public and abstract
+
+eg :
+
+interface loan
+{
+	void loanslab();
+}
+
+NOTE : 
+class to class - extends
+interface to interface - extends
+interface to class - implements
+----------------------------------------------------------------------------------------------------
+
+Static Variable : 
+- Static is a keyword
+- Static variable is called by the class name.
+- Static variable will always be global and cannot be local
+- For all the objects, it shares common memory and it is used for memory management
+- Static variable can only call static members
+----------------------------------------------------------------------------------------------------
+
+Constructor :
+- We use constructor to formally initialize the values to the variables
+rules : 
+- Cinstructor name should be same as the class name
+- It is like method but it does not have return type
+- It is called automatically at the time of object creation of the class
+- There are 2 types
+1) Default
+2) Parameterized
+
+eg : 
+1) Default
+
+class DefaultConstructor {
+	DefaultConstructor () {
+		System.out.println("Parent Constructor");		
+	}
+}
+
+2) Parameterized
+
+class ParameterizedConstructor {
+	ParameterizedConstructor (int id, String name) {
+		System.out.println("Parameterized Constructor");
+		System.out.println("ID : " + id + " \nName : " + name);
+	}
+}
+
+----------------------------------------------------------------------------------------------------
+
+Features of OOPS in detail : 
+
+1) Inheritance : 
+- Whenever there is dependency or relationship then we can go for inheritance
+- Inheritance is creating a new class from existing class
+
+Existing class is : Super class or Parent class
+New class is : Sub class or Child class
+
+- Subclass inherits the property from the parent class, except private
+- "extends" keyword makes the relationship
+
+eg : 
+
+class Subclass_name extends Superclass_name  
+{  
+   //data members, member functions  
+}  
+
+Advantages : 
+- Code reusability
+- Code sharing
+
+Types : 
+
+1) Single
+2) Multilevel
+3) Hierarchical
+4) Multiple    //Not supported in java
+5) Hybrid	    //Not supported in java
+
+Single Inheritance : 
+- In single inheritance, subclasses inherit the features of superclass. 
+
+class Parent
+{ 
+    
+} 
+class Child extends Parent
+{ 
+   
+} 
+
+Multilevel : 
+- a derived class will  inherit a base class and as well as the derived class also acts as the base class to other class.
+
+class Parent
+{ 
+    
+} 
+  
+class Child1 extends Parent
+{ 
+    
+} 
+  
+class Chikd 2 extends Child1
+{ 
+   
+} 
+
+Hierarchical : 
+- one class serves as a superclass or base class for more than one sub class.
+
+class Parent
+{ 
+    
+} 
+  
+class Child1 extends Parent
+{ 
+   
+} 
+  
+class Child2 extends Parent
+{ 
+    
+} 
+
+----------------------------------------------------------------------------------------------------
+
+Encapsulation : 
+- We can achieve Hiding and security of data through encapsulation
+- Wrappring data and methods into one unit
+- Using getters and setters methods to access data
+
+Encapsulation Program : 
+
+package encapsulation;
+class Employee {
+	private int id;
+	public void setid(int id) {
+		this.id = id;
+	}
+	public int getid() {
+		return id;
+	}
+}
+public class EncapsulationDemo {
+
+	public static void main(String[] args) {
+		Employee emp = new Employee();
+		emp.setid(1);
+		System.out.println(emp.getid());
+	}
+}
+
+----------------------------------------------------------------------------------------------------
+
+Polymorphism : (Many Forms)
+- One name and Many forms
+Two Types : 
+
+Compile Time				Run Time
+
+- Overloading				- Overriding
+-A class having same method name with 		-Different class having same method 
+different parameters			with different parameters
+					-Overriding always comes under inheritance.
+
+Upcasting : Reference of parent object of Child
+Parent C=new Child();
+
+----------------------------------------------------------------------------------------------------
+
+Abstraction : 
+- Showing necessary details while hiding the unwanted details is anstraction
+
+Abstraction Program : 
+
+package abstraction;
+abstract class Values {
+	abstract void numbers(int a, int b);
+	void display() {
+		System.out.println("Normal Method");
+	}
+}
+
+class Addition extends Values {
+	@Override
+	void numbers(int a, int b) {
+		System.out.println("Addition : "+a + b);
+	}
+}
+
+class Multiplication extends Values {
+	@Override
+	void numbers(int a, int b) {
+		System.out.println("Multiplication : "+a * b);
+	}
+}
+
+public class AbstractDemo {
+	public static void main(String[] args) {
+		Addition add = new Addition();
+		add.numbers(2, 3);
+		add.display();
+		Multiplication mult = new Multiplication();
+		mult.numbers(3, 4);
+		mult.display();
+	}
+}
+
+----------------------------------------------------------------------------------------------------
